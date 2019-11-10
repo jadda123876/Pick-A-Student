@@ -22,10 +22,12 @@ namespace WindowsFormsApplication1
             helpScreen.Visible = false;
 
         }
-
+        #pragma warning disable IDE1006 // surpresses warnings about naming style
 
         //=====Main Menu====
+
         private void menu_ToRandomButton_Click(object sender, EventArgs e)
+
         {
             if (menuScreen.Visible) { 
                 menuScreen.Visible = false;
