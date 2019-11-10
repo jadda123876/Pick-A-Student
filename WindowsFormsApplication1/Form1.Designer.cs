@@ -405,7 +405,6 @@
             // 
             // form1BindingSource
             // 
-            this.form1BindingSource.DataSource = typeof(WindowsFormsApplication1.Form1);
             // 
             // Form1
             // 
