@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -15,6 +16,8 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
 
+        SqlConnection con = new SqlConnection("Data Source=.;database=studentDataSet");
+        
         //current storage method for the classes of students
         ArrayList classes = new ArrayList();
 
@@ -43,6 +46,8 @@ namespace WindowsFormsApplication1
         {
             if (menuScreen.Visible)
             {
+
+                /*
                 var result = MessageBox.Show("Are you creating a new class?", "Class Editor", MessageBoxButtons.YesNoCancel);
                 switch (result)
                 {
@@ -68,13 +73,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("What did you press?");
                         break;
                 }
+                */
 
-                /*
+
+                
                 menuScreen.Visible = false;
                 editorScreen.Visible = true;
                 randomizationScreen.Visible = false;
                 helpScreen.Visible = false;
-                */
+                
             }
         }
 
@@ -223,6 +230,12 @@ namespace WindowsFormsApplication1
             }
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'studentDataSet.studentTable' table. You can move, or remove it, as needed.
+            this.studentTableTableAdapter.Fill(this.studentDataSet.studentTable);
+
+        }
+
     }
 }

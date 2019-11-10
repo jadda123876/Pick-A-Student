@@ -47,11 +47,8 @@
             this.random_CurrentStudent = new System.Windows.Forms.Label();
             this.random_ToMainMenu = new System.Windows.Forms.Button();
             this.editorScreen = new System.Windows.Forms.Panel();
-            this.editor_classGrid = new System.Windows.Forms.DataGridView();
-            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correctColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.incorrectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.absentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentDataSet = new WindowsFormsApplication1.studentDataSet();
             this.editor_NumStudentsLabel = new System.Windows.Forms.Label();
             this.editor_NumPeopleInClass = new System.Windows.Forms.Label();
             this.editor_RevertChangesButton = new System.Windows.Forms.Button();
@@ -63,12 +60,25 @@
             this.helpScreen = new System.Windows.Forms.Panel();
             this.help_ToMenuButton = new System.Windows.Forms.Button();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableTableAdapter = new WindowsFormsApplication1.studentDataSetTableAdapters.studentTableTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correctDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.incorrectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuScreen.SuspendLayout();
             this.randomizationScreen.SuspendLayout();
             this.editorScreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editor_classGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             this.helpScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuScreen
@@ -81,7 +91,7 @@
             this.menuScreen.Controls.Add(this.menu_ToEditorButton);
             this.menuScreen.Controls.Add(this.menu_ToRandomButton);
             this.menuScreen.Location = new System.Drawing.Point(-1, 0);
-            this.menuScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuScreen.Margin = new System.Windows.Forms.Padding(2);
             this.menuScreen.Name = "menuScreen";
             this.menuScreen.Size = new System.Drawing.Size(587, 531);
             this.menuScreen.TabIndex = 0;
@@ -100,7 +110,7 @@
             // menu_QuitButton
             // 
             this.menu_QuitButton.Location = new System.Drawing.Point(242, 304);
-            this.menu_QuitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_QuitButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_QuitButton.Name = "menu_QuitButton";
             this.menu_QuitButton.Size = new System.Drawing.Size(112, 24);
             this.menu_QuitButton.TabIndex = 5;
@@ -111,7 +121,7 @@
             // menu_ToHelpButton
             // 
             this.menu_ToHelpButton.Location = new System.Drawing.Point(242, 263);
-            this.menu_ToHelpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_ToHelpButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_ToHelpButton.Name = "menu_ToHelpButton";
             this.menu_ToHelpButton.Size = new System.Drawing.Size(112, 24);
             this.menu_ToHelpButton.TabIndex = 4;
@@ -122,7 +132,7 @@
             // menu_ExportButton
             // 
             this.menu_ExportButton.Location = new System.Drawing.Point(242, 223);
-            this.menu_ExportButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_ExportButton.Name = "menu_ExportButton";
             this.menu_ExportButton.Size = new System.Drawing.Size(112, 24);
             this.menu_ExportButton.TabIndex = 3;
@@ -133,7 +143,7 @@
             // menu_ImportButton
             // 
             this.menu_ImportButton.Location = new System.Drawing.Point(242, 182);
-            this.menu_ImportButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_ImportButton.Name = "menu_ImportButton";
             this.menu_ImportButton.Size = new System.Drawing.Size(112, 24);
             this.menu_ImportButton.TabIndex = 2;
@@ -143,7 +153,7 @@
             // menu_ToEditorButton
             // 
             this.menu_ToEditorButton.Location = new System.Drawing.Point(242, 141);
-            this.menu_ToEditorButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_ToEditorButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_ToEditorButton.Name = "menu_ToEditorButton";
             this.menu_ToEditorButton.Size = new System.Drawing.Size(112, 24);
             this.menu_ToEditorButton.TabIndex = 1;
@@ -154,7 +164,7 @@
             // menu_ToRandomButton
             // 
             this.menu_ToRandomButton.Location = new System.Drawing.Point(242, 102);
-            this.menu_ToRandomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu_ToRandomButton.Margin = new System.Windows.Forms.Padding(2);
             this.menu_ToRandomButton.Name = "menu_ToRandomButton";
             this.menu_ToRandomButton.Size = new System.Drawing.Size(112, 24);
             this.menu_ToRandomButton.TabIndex = 0;
@@ -173,7 +183,7 @@
             this.randomizationScreen.Controls.Add(this.random_CurrentStudent);
             this.randomizationScreen.Controls.Add(this.random_ToMainMenu);
             this.randomizationScreen.Location = new System.Drawing.Point(2, 0);
-            this.randomizationScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.randomizationScreen.Margin = new System.Windows.Forms.Padding(2);
             this.randomizationScreen.Name = "randomizationScreen";
             this.randomizationScreen.Size = new System.Drawing.Size(584, 531);
             this.randomizationScreen.TabIndex = 1;
@@ -183,7 +193,7 @@
             // 
             this.random_NextStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.random_NextStudent.Location = new System.Drawing.Point(428, 50);
-            this.random_NextStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.random_NextStudent.Margin = new System.Windows.Forms.Padding(2);
             this.random_NextStudent.Name = "random_NextStudent";
             this.random_NextStudent.Size = new System.Drawing.Size(63, 29);
             this.random_NextStudent.TabIndex = 7;
@@ -262,7 +272,7 @@
             // random_ToMainMenu
             // 
             this.random_ToMainMenu.Location = new System.Drawing.Point(8, 10);
-            this.random_ToMainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.random_ToMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.random_ToMainMenu.Name = "random_ToMainMenu";
             this.random_ToMainMenu.Size = new System.Drawing.Size(56, 19);
             this.random_ToMainMenu.TabIndex = 0;
@@ -272,7 +282,7 @@
             // 
             // editorScreen
             // 
-            this.editorScreen.Controls.Add(this.editor_classGrid);
+            this.editorScreen.Controls.Add(this.dataGridView1);
             this.editorScreen.Controls.Add(this.editor_NumStudentsLabel);
             this.editorScreen.Controls.Add(this.editor_NumPeopleInClass);
             this.editorScreen.Controls.Add(this.editor_RevertChangesButton);
@@ -282,50 +292,20 @@
             this.editorScreen.Controls.Add(this.editor_Label1);
             this.editorScreen.Controls.Add(this.editor_ToMainMenu);
             this.editorScreen.Location = new System.Drawing.Point(0, 0);
-            this.editorScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editorScreen.Margin = new System.Windows.Forms.Padding(2);
             this.editorScreen.Name = "editorScreen";
             this.editorScreen.Size = new System.Drawing.Size(586, 483);
             this.editorScreen.TabIndex = 2;
             // 
-            // editor_classGrid
+            // studentDataSetBindingSource1
             // 
-            this.editor_classGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.editor_classGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameColumn,
-            this.correctColumn,
-            this.incorrectColumn,
-            this.absentColumn});
-            this.editor_classGrid.Location = new System.Drawing.Point(98, 96);
-            this.editor_classGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.editor_classGrid.Name = "editor_classGrid";
-            this.editor_classGrid.RowTemplate.Height = 24;
-            this.editor_classGrid.Size = new System.Drawing.Size(406, 122);
-            this.editor_classGrid.TabIndex = 4;
-            this.editor_classGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.studentDataSetBindingSource1.DataSource = this.studentDataSet;
+            this.studentDataSetBindingSource1.Position = 0;
             // 
-            // nameColumn
+            // studentDataSet
             // 
-            this.nameColumn.HeaderText = "Name";
-            this.nameColumn.Name = "nameColumn";
-            this.nameColumn.Width = 200;
-            // 
-            // correctColumn
-            // 
-            this.correctColumn.HeaderText = "Correct";
-            this.correctColumn.Name = "correctColumn";
-            this.correctColumn.Width = 75;
-            // 
-            // incorrectColumn
-            // 
-            this.incorrectColumn.HeaderText = "Incorrect";
-            this.incorrectColumn.Name = "incorrectColumn";
-            this.incorrectColumn.Width = 75;
-            // 
-            // absentColumn
-            // 
-            this.absentColumn.HeaderText = "Absent";
-            this.absentColumn.Name = "absentColumn";
-            this.absentColumn.Width = 75;
+            this.studentDataSet.DataSetName = "studentDataSet";
+            this.studentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // editor_NumStudentsLabel
             // 
@@ -352,7 +332,7 @@
             // editor_RevertChangesButton
             // 
             this.editor_RevertChangesButton.Location = new System.Drawing.Point(134, 397);
-            this.editor_RevertChangesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editor_RevertChangesButton.Margin = new System.Windows.Forms.Padding(2);
             this.editor_RevertChangesButton.Name = "editor_RevertChangesButton";
             this.editor_RevertChangesButton.Size = new System.Drawing.Size(93, 21);
             this.editor_RevertChangesButton.TabIndex = 5;
@@ -363,7 +343,7 @@
             // editor_SaveChanges
             // 
             this.editor_SaveChanges.Location = new System.Drawing.Point(352, 396);
-            this.editor_SaveChanges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editor_SaveChanges.Margin = new System.Windows.Forms.Padding(2);
             this.editor_SaveChanges.Name = "editor_SaveChanges";
             this.editor_SaveChanges.Size = new System.Drawing.Size(85, 24);
             this.editor_SaveChanges.TabIndex = 4;
@@ -374,7 +354,7 @@
             // editor_ResetQueueButton
             // 
             this.editor_ResetQueueButton.Location = new System.Drawing.Point(241, 376);
-            this.editor_ResetQueueButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editor_ResetQueueButton.Margin = new System.Windows.Forms.Padding(2);
             this.editor_ResetQueueButton.Name = "editor_ResetQueueButton";
             this.editor_ResetQueueButton.Size = new System.Drawing.Size(94, 19);
             this.editor_ResetQueueButton.TabIndex = 3;
@@ -385,7 +365,7 @@
             // 
             this.editor_ClassName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editor_ClassName.Location = new System.Drawing.Point(192, 54);
-            this.editor_ClassName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editor_ClassName.Margin = new System.Windows.Forms.Padding(2);
             this.editor_ClassName.Name = "editor_ClassName";
             this.editor_ClassName.Size = new System.Drawing.Size(203, 26);
             this.editor_ClassName.TabIndex = 2;
@@ -404,7 +384,7 @@
             // editor_ToMainMenu
             // 
             this.editor_ToMainMenu.Location = new System.Drawing.Point(9, 10);
-            this.editor_ToMainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editor_ToMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.editor_ToMainMenu.Name = "editor_ToMainMenu";
             this.editor_ToMainMenu.Size = new System.Drawing.Size(56, 19);
             this.editor_ToMainMenu.TabIndex = 0;
@@ -416,7 +396,7 @@
             // 
             this.helpScreen.Controls.Add(this.help_ToMenuButton);
             this.helpScreen.Location = new System.Drawing.Point(2, 0);
-            this.helpScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.helpScreen.Margin = new System.Windows.Forms.Padding(2);
             this.helpScreen.Name = "helpScreen";
             this.helpScreen.Size = new System.Drawing.Size(584, 531);
             this.helpScreen.TabIndex = 3;
@@ -424,7 +404,7 @@
             // help_ToMenuButton
             // 
             this.help_ToMenuButton.Location = new System.Drawing.Point(0, 0);
-            this.help_ToMenuButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.help_ToMenuButton.Margin = new System.Windows.Forms.Padding(2);
             this.help_ToMenuButton.Name = "help_ToMenuButton";
             this.help_ToMenuButton.Size = new System.Drawing.Size(56, 19);
             this.help_ToMenuButton.TabIndex = 0;
@@ -436,6 +416,66 @@
             // 
             this.form1BindingSource.DataSource = typeof(WindowsFormsApplication1.Form1);
             // 
+            // studentDataSetBindingSource
+            // 
+            this.studentDataSetBindingSource.DataSource = this.studentDataSet;
+            this.studentDataSetBindingSource.Position = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.correctDataGridViewTextBoxColumn,
+            this.incorrectDataGridViewTextBoxColumn,
+            this.absentDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentTableBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(53, 108);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(489, 230);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // studentTableBindingSource
+            // 
+            this.studentTableBindingSource.DataMember = "studentTable";
+            this.studentTableBindingSource.DataSource = this.studentDataSetBindingSource1;
+            // 
+            // studentTableTableAdapter
+            // 
+            this.studentTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // correctDataGridViewTextBoxColumn
+            // 
+            this.correctDataGridViewTextBoxColumn.DataPropertyName = "Correct";
+            this.correctDataGridViewTextBoxColumn.HeaderText = "Correct";
+            this.correctDataGridViewTextBoxColumn.Name = "correctDataGridViewTextBoxColumn";
+            // 
+            // incorrectDataGridViewTextBoxColumn
+            // 
+            this.incorrectDataGridViewTextBoxColumn.DataPropertyName = "Incorrect";
+            this.incorrectDataGridViewTextBoxColumn.HeaderText = "Incorrect";
+            this.incorrectDataGridViewTextBoxColumn.Name = "incorrectDataGridViewTextBoxColumn";
+            // 
+            // absentDataGridViewTextBoxColumn
+            // 
+            this.absentDataGridViewTextBoxColumn.DataPropertyName = "Absent";
+            this.absentDataGridViewTextBoxColumn.HeaderText = "Absent";
+            this.absentDataGridViewTextBoxColumn.Name = "absentDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,18 +485,23 @@
             this.Controls.Add(this.helpScreen);
             this.Controls.Add(this.menuScreen);
             this.Controls.Add(this.randomizationScreen);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Pick-A-Student (Development Version)";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuScreen.ResumeLayout(false);
             this.menuScreen.PerformLayout();
             this.randomizationScreen.ResumeLayout(false);
             this.randomizationScreen.PerformLayout();
             this.editorScreen.ResumeLayout(false);
             this.editorScreen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editor_classGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             this.helpScreen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,12 +536,18 @@
         private System.Windows.Forms.Button editor_ResetQueueButton;
         private System.Windows.Forms.TextBox editor_ClassName;
         private System.Windows.Forms.Label editor_Label1;
-        private System.Windows.Forms.DataGridView editor_classGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correctColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn incorrectColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn absentColumn;
         private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.BindingSource studentDataSetBindingSource;
+        private studentDataSet studentDataSet;
+        private System.Windows.Forms.BindingSource studentDataSetBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource studentTableBindingSource;
+        private studentDataSetTableAdapters.studentTableTableAdapter studentTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correctDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn incorrectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absentDataGridViewTextBoxColumn;
     }
 }
 
