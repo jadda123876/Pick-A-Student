@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
 
         private void editor_SaveChanges_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            /*SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "WAP Files (*.txt)|*.txt";
             sfd.OverwritePrompt = true;
             if(sfd.ShowDialog() == DialogResult.OK)
@@ -122,8 +122,7 @@ namespace WindowsFormsApplication1
                 }
                 write.WriteLine(str);
                 write.Close();
-                write.Dispose();
+                write.Dispose();*/
             }
         }
     }
-}
